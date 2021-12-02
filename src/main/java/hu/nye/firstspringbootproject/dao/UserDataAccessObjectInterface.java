@@ -2,13 +2,13 @@ package hu.nye.firstspringbootproject.dao;
 
 import hu.nye.firstspringbootproject.domain.Users;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface UserDataAccessObjectInterface {
 
     Users getUserById(Long id);
 
-    Collection<Users> getAllUser();
+    List<Users> getAllUser();
 
     void addUser(Users user);
 

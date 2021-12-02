@@ -31,7 +31,7 @@
                             <a class="nav-link" href="/exams">Vizsgák</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="/users">Felhasználók</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -50,7 +50,7 @@
 </div>
 
 <div class="container mt-3">
-    <h4>Vizsgák</h4>
+    <h4>Felhasználók</h4>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -61,11 +61,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="userList : ${UserList}">
-            <td th:text="${userList.id}"></td>
-            <td th:text="${userList.name}"></td>
-            <td th:text="${userList.password}"></td>
-            <td th:text="${userList.teacher}"></td>
+        <tr th:each="userL : ${userList}">
+            <td th:text="${userL.id}"></td>
+            <td th:text="${userL.name}"></td>
+            <td th:text="${userL.password}"></td>
+            <td th:text="${userL.teacher}"></td>
         </tr>
         </tbody>
     </table>

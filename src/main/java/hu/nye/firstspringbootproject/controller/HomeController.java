@@ -34,6 +34,7 @@ public class HomeController {
     @RequestMapping(USERS_PAGE_MAPPING)
     public String userList(Model model){
         model.addAttribute(USERS_MODEL_KEY,userData.getAllUser());
+        System.out.println(userData.getAllUser() + "ddddddddddddeeaísas");
         return "UserList";
     }
 
