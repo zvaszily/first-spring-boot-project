@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Vizsgajelentkezés</title>
+    <title>Vizsgák</title>
 </head>
 <body>
 <div class="row">
@@ -18,14 +18,14 @@
     <div class="col-md-6">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Vizsgajelentkezés</a>
+                <a class="navbar-brand" href="#">Vizsgák</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/exams">Vizsgák</a>
@@ -54,27 +54,22 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Tárgykód</th>
-            <th>Tárgy</th>
-            <th>Kurzus</th>
-            <th>Kezdet</th>
-            <th>Hely</th>
-            <th>Oktató</th>
+            <th>ID</th>
+            <th>Név</th>
+            <th>Password</th>
+            <th>Tanár?</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>BPI2118L</td>
-            <td>A rendszerfejlesztés technológiája és módszertana</td>
-            <td>Gyakorlat</td>
-            <td>2021.12.12 10:00</td>
-            <td>Nyíregyháza</td>
-            <td></td>
+        <tr th:each="userList : ${UserList}">
+            <td th:text="${userList.id}"></td>
+            <td th:text="${userList.name}"></td>
+            <td th:text="${userList.password}"></td>
+            <td th:text="${userList.teacher}"></td>
         </tr>
         </tbody>
     </table>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

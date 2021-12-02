@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Users {
@@ -12,7 +12,8 @@ public class Users {
     @Id
     private Long id;
     private String name;
+    private String password;
     private Boolean teacher;
     @OneToMany(mappedBy = "users")
-    private List<Exams> exams;
+    Set<ExamRegistration> registrations;
 }

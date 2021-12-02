@@ -1,14 +1,26 @@
 package hu.nye.firstspringbootproject.controller;
 
+import hu.nye.firstspringbootproject.dao.UserDataAccessObjectInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    private static final String ROOT_MAPPING = "/";
+    private static final String USERS_PAGE_MAPPING = "/users";
+    private static final String USERS_MODEL_KEY = "userList";
+
+    private UserDataAccessObjectInterface userData;
+
+    @Autowired
+    public HomeController(UserDataAccessObjectInterface userData) {
+        this.userData = userData;
+    }
+
+    @RequestMapping(ROOT_MAPPING)
     public String index(){
         return "Index";
     }
@@ -18,4 +30,11 @@ public class HomeController {
         model.addAttribute("pageH1","Ez Egy új érték!");
         return "ExamsList";
     }
+
+    @RequestMapping(USERS_PAGE_MAPPING)
+    public String userList(Model model){
+        model.addAttribute(USERS_MODEL_KEY,userData.getAllUser());
+        return "UserList";
+    }
+
 }
