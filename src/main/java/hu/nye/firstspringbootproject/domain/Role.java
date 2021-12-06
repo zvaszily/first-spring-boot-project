@@ -11,24 +11,12 @@ public class Role {
     @Id
     @GeneratedValue
     private Long id;
-
     private String role;
-
     @ManyToMany( mappedBy = "roles")
     private Set<User> users = new HashSet<User>();
 
     public Role() {
     }
-
-    // public Role(String roleName){} //
-/*
-    public Role(Long id, String role, Set<User> users) {
-        this.id = id;
-        this.role = role;
-        this.users = users;
-    }
-
- */
 
     public Long getId() {
         return id;

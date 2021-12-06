@@ -87,7 +87,6 @@ public class UserDataAccessObject implements UserDataAccessObjectInterface, User
         } else {
             userToRegister.addRoles(USER_ROLE);
         }
-        System.out.println(userToRegister);
         userRepository.save(userToRegister);
 
         return "ok";

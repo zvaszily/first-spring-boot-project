@@ -52,9 +52,6 @@ public class HomeController {
     @PostMapping("/reg")
     public String reg(@ModelAttribute User user) {
         log.info("Uj user!");
-        System.out.println(user.getFullName());
-        System.out.println(user.getPassword());
-        System.out.println(user);
         log.debug(user.getFullName());
         log.debug(user.getPassword());
         userData.registerUser(user);
