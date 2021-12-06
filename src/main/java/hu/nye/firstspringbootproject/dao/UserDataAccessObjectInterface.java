@@ -1,16 +1,23 @@
 package hu.nye.firstspringbootproject.dao;
 
-import hu.nye.firstspringbootproject.domain.Users;
+import hu.nye.firstspringbootproject.domain.Role;
+import hu.nye.firstspringbootproject.domain.User;
 
 import java.util.List;
 
 public interface UserDataAccessObjectInterface {
 
-    Users getUserById(Long id);
+    User getUserById(Long id);
 
-    List<Users> getAllUser();
+    List<User> getAllUser();
 
-    void addUser(Users user);
+    public User findByEmail(String email);
+
+    String registerUser(User user);
+
+    Role findByRole(String role);
+
+    void addUser(User user);
 
     void deleteUserById(Long id);
 }
