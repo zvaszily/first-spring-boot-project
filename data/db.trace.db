@@ -1508,3 +1508,11 @@ drop table users [90107-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-12-12 12:30:18 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM USERS_ROLES 
+DELETE FROM[*] USERS_ROLES  WHERE USER_ID=5"; SQL statement:
+SELECT * FROM USERS_ROLES 
+DELETE FROM USERS_ROLES  WHERE user_id=5 [42000-200]
+2021-12-12 12:31:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "USERS_ROLES[*] USERS_ROLES"; expected "UPDATE, USE"; SQL statement:
+USERS_ROLES USERS_ROLES [42001-200]
